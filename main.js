@@ -6,6 +6,7 @@ The quick brown fox jumps over the lazy dog.
 abbcccdddd
 hxyp
 http://localhost:1234
+동해물과_백두산이 마르고 닳도록
 `
 // 생성자
 // const regexp = new RegExp('the', 'gi')
@@ -60,4 +61,41 @@ console.log(
 )
 console.log(
   str.match(/\b\w{2,3}\b/g)
+)
+// \b 문자가 아닌 것의 경계
+// \w 모든 문자를 의미
+
+console.log(
+  str.match(/[fox]/g)
+)
+console.log(
+  str.match(/[0-9]{1,}/g)
+)
+console.log(
+  str.match(/[가-힣]{1,}/g)
+)
+console.log(
+  str.match(/\w/g)
+)
+console.log(
+  str.match(/\bf\w{1,}\b/g)
+)
+console.log(
+  str.match(/\d{1,}/g)
+)
+console.log(
+  str.match(/\s/g)
+)
+const h = `  the   hello   world!  `
+console.log(
+  h.match(/\s/g)
+)
+console.log(
+  h.replace(/\s/g, '')
+)
+console.log(
+  str.match(/.{1,}(?=@)/g)
+)
+console.log(
+  str.match(/(?<=@).{1,}/g)
 )
