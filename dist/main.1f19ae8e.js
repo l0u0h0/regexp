@@ -124,6 +124,16 @@ var str = "\n010-1234-5678\nhelltheohi@gmail.com\nhttps://www.omdbapi.com/?apike
 
 var regexp = /the/gi;
 console.log(str.match(regexp));
+var regexp1 = /fox/gi;
+console.log(regexp1.test(str));
+var regexp2 = /Heropy/gi;
+console.log(regexp2.test(str));
+console.log(str.replace(regexp1, 'AAA'));
+console.log(str); // let는 재할당 가능
+
+var str1 = "\n010-1234-5678\nhelltheohi@gmail.com\nhttps://www.omdbapi.com/?apikey=7035c60c&s=frozen\nThe quick brown fox jumps over the lazy dog\nabbcccdddd\n";
+str1 = str1.replace(regexp1, 'AAA');
+console.log(str1);
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -152,7 +162,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51131" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54342" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
