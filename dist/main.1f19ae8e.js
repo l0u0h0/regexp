@@ -118,7 +118,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
-var str = "\n010-1234-5678\nhelltheohi@gmail.com\nhttps://www.omdbapi.com/?apikey=7035c60c&s=frozen\nThe quick brown fox jumps over the lazy dog\nabbcccdddd\n"; // 생성자
+var str = "\n010-1234-5678\nhelltheohi@gmail.com\nhttps://www.omdbapi.com/?apikey=7035c60c&s=frozen\nThe quick brown fox jumps over the lazy dog.\nabbcccdddd\n"; // 생성자
 // const regexp = new RegExp('the', 'gi')
 // 리터럴
 
@@ -131,9 +131,14 @@ console.log(regexp2.test(str));
 console.log(str.replace(regexp1, 'AAA'));
 console.log(str); // let는 재할당 가능
 
-var str1 = "\n010-1234-5678\nhelltheohi@gmail.com\nhttps://www.omdbapi.com/?apikey=7035c60c&s=frozen\nThe quick brown fox jumps over the lazy dog\nabbcccdddd\n";
+var str1 = "\n010-1234-5678\nhelltheohi@gmail.com\nhttps://www.omdbapi.com/?apikey=7035c60c&s=frozen\nThe quick brown fox jumps over the lazy dog.\nabbcccdddd\n";
 str1 = str1.replace(regexp1, 'AAA');
 console.log(str1);
+console.log(str.match(/the/gi)); // \-> 이스케이프 문자 (문자로 해석되라는 의미)
+// .은 일반적인 문자로 해석되지 않기에 \를 붙여줌
+// 문자열이 문장이 끝나는 부분을 의미 $
+
+console.log(str.match(/\.$/gim));
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -162,7 +167,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54342" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58451" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
